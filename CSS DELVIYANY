@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <title>Form Mahasiswa</title>
+
+         <!-- ================= CSS Delviyany ================= -->
+    <style>
+        body{
+            font-family:Arial;
+            margin:0;
+            padding:20px;
+            background:#eef9e7;
+            transition:.3s;
+        }
+
+        .container{
+            max-width:800px;
+            margin:auto;
+        }
+
+        h2{
+            text-align:center;
+        }
+
+        form{
+            background:#f7d2ed;
+            padding:25px;
+            border-radius:15px;
+            margin-bottom:25px;
+            box-shadow:0 8px 20px rgba(0,0,0,.2);
+        }
+
+        .row,.radio,.radio-group{
+            display:flex;
+            gap:10px;
+        }
+
+        .radio{
+            justify-content:space-between;
+            align-items:center;
+            margin-bottom:15px;
+        }
+
+        .row input,
+        .row select{
+            flex:1;
+        }
+
+        input,textarea,select{
+            width:100%;
+            padding:10px;
+            margin:5px 0 15px;
+            border:none;
+            border-radius:8px;
+            outline:none;
+            box-sizing:border-box;
+        }
+
+        button{
+            padding:10px 15px;
+            margin:5px 5px 0 0;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+            font-weight:bold;
+        }
+
+        button:hover{
+            opacity:.8;
+        }
+
+        .submit{background:green;color:white;}
+        .reset{background:red;color:white;}
+        .excel{background:#1d6f42;color:white;}
+        .pdf{background:#c62828;color:white;}
+        .mode{background:#333;color:white;}
