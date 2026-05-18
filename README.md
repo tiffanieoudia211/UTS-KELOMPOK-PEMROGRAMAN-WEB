@@ -1,4 +1,4 @@
-# UTS-KELOMPOK-PEMROGRAMAN-WEB
+# UTS KELOMPOK PEMROGRAMAN WEB
 # 🎓 Sistem Manajemen Data Mahasiswa
 
 Aplikasi web sederhana berbasis HTML, CSS, dan JavaScript untuk mengelola data mahasiswa secara dinamis.  
@@ -6,10 +6,25 @@ Project ini dibuat sebagai tugas Ujian Tengah Semester (UTS) mata kuliah Pemrogr
 
 ---
 
-## 📌 Deskripsi Project
+# 📌 Deskripsi Project
 
-Website ini digunakan untuk menginput dan mengelola data mahasiswa seperti:
+Website ini berfungsi untuk:
+- Menambahkan data mahasiswa
+- Mengedit data mahasiswa
+- Menghapus data mahasiswa
+- Menampilkan data dalam tabel
+- Export data ke Excel dan PDF
+- Menggunakan fitur Dark Mode & Light Mode
+- Menggunakan sistem Pagination pada tabel data
 
+Semua data diproses secara dinamis menggunakan JavaScript tanpa database.
+
+---
+
+# ✨ Fitur Utama
+
+## ✅ Tambah Data Mahasiswa
+Pengguna dapat menginput:
 - NIM
 - Nama
 - Alamat
@@ -17,50 +32,69 @@ Website ini digunakan untuk menginput dan mengelola data mahasiswa seperti:
 - Tanggal Lahir
 - Password
 
-Data yang dimasukkan akan langsung tampil dalam tabel dan dapat diedit maupun dihapus secara dinamis menggunakan JavaScript.
+---
+
+## ✅ Edit Data
+Data mahasiswa yang sudah tersimpan dapat diperbarui kembali menggunakan tombol edit.
 
 ---
 
-## ✨ Fitur Utama
+## ✅ Hapus Data
+Data dapat dihapus dari tabel menggunakan tombol delete.
 
-### ✅ Tambah Data Mahasiswa
-Pengguna dapat menambahkan data mahasiswa melalui form input.
+---
 
-### ✅ Edit Data
-Data yang sudah tersimpan dapat diedit kembali.
+## ✅ Validasi Password
+Password harus minimal terdiri dari 8 karakter.
 
-### ✅ Hapus Data
-Data mahasiswa dapat dihapus menggunakan tombol aksi.
+---
 
-### ✅ Validasi Password
-Password minimal harus terdiri dari 8 karakter.
-
-### ✅ Export Excel
+## ✅ Export Excel
 Data tabel dapat diunduh dalam format `.xlsx`.
 
-### ✅ Export PDF
-Data mahasiswa dapat diekspor menjadi file PDF.
-
-### ✅ Dark Mode & Light Mode
-Tampilan website dapat diubah ke mode gelap atau terang.
-
-### ✅ Dropdown Tanggal Otomatis
-Tanggal, bulan, dan tahun dibuat otomatis menggunakan JavaScript.
+Library yang digunakan:
+- XLSX.js
 
 ---
 
-## 🛠️ Teknologi yang Digunakan
+## ✅ Export PDF
+Data mahasiswa dapat diekspor menjadi file PDF otomatis.
 
-- HTML5
-- CSS3
-- JavaScript
-- Library XLSX
-- Library jsPDF
+Library yang digunakan:
+- jsPDF
 - jsPDF AutoTable
 
 ---
 
-## 📂 Struktur Project
+## ✅ Dark Mode & Light Mode
+Website memiliki fitur perubahan tema:
+- Dark Mode
+- Light Mode
+
+---
+
+## ✅ Pagination
+Tabel data mahasiswa menggunakan sistem pagination:
+- Next Page
+- Previous Page
+- Informasi nomor halaman
+
+Setiap halaman menampilkan maksimal 5 data.
+
+---
+
+# 🛠️ Teknologi yang Digunakan
+
+- HTML5
+- CSS3
+- JavaScript
+- XLSX Library
+- jsPDF
+- jsPDF AutoTable
+
+---
+
+# 📂 Struktur Project
 
 ```bash
 project-folder/
@@ -71,67 +105,92 @@ project-folder/
 
 ---
 
-## ▶️ Cara Menjalankan Project
+# ▶️ Cara Menjalankan Project
 
-1. Download atau clone project ini
+1. Download atau clone project
 2. Buka folder project
 3. Jalankan file `index.html`
-4. Website siap digunakan di browser
+4. Website akan otomatis berjalan di browser
 
 ---
 
-## 📸 Tampilan Website
+# 📸 Tampilan Website
 
-Fitur pada website:
+Fitur yang tersedia pada website:
 - Form input mahasiswa
 - Tabel data mahasiswa
-- Tombol export Excel
-- Tombol export PDF
-- Dark mode dan light mode
+- Tombol edit dan hapus
+- Export Excel
+- Export PDF
+- Dark Mode
+- Pagination halaman
 
 ---
 
-## 👨‍💻 Pembagian Tugas
+# 👨‍💻 Pembagian Tugas
 
-### 🎨 CSS
+## 🎨 CSS
 - Delviyany
-- Syalosa (ikon aksi)
 
-### 🧱 HTML
-- Ryouma
+## 🖼️ Ikon Aksi
+- Syalosa
 
-### ⚙️ JavaScript
+## 🧱 HTML
+- Tiffani
+
+## ⚙️ JavaScript
 - Tiffani
 
 ---
 
-## 📚 Fungsi Library
+# 📚 Penjelasan Program
 
-### XLSX
-Digunakan untuk export data tabel ke file Excel.
-
-### jsPDF
-Digunakan untuk membuat file PDF.
-
-### jsPDF AutoTable
-Digunakan untuk mengubah tabel HTML menjadi tabel PDF otomatis.
+## HTML
+Digunakan untuk membuat struktur halaman website seperti:
+- Form input
+- Tabel data
+- Tombol aksi
+- Pagination
 
 ---
 
-## 📖 Tujuan Project
-
-Project ini dibuat untuk memahami konsep:
-- DOM JavaScript
-- Event handling
-- Manipulasi tabel
-- Validasi form
-- Export data
-- Penggunaan library JavaScript
-- Pembuatan UI sederhana berbasis web
+## CSS
+Digunakan untuk:
+- Mendesain tampilan website
+- Membuat layout responsif sederhana
+- Membuat Dark Mode
+- Styling tabel dan tombol
 
 ---
 
-## 👩‍💻 Author
+## JavaScript
+Digunakan untuk:
+- Menambahkan data
+- Mengedit data
+- Menghapus data
+- Validasi password
+- Export Excel
+- Export PDF
+- Pagination
+- Toggle Dark Mode
+
+---
+
+# 🎯 Tujuan Project
+
+Project ini dibuat untuk mempelajari:
+- Manipulasi DOM
+- Event Listener
+- Form Validation
+- Dynamic Table
+- Pagination JavaScript
+- Export File
+- Penggunaan Library JavaScript
+- UI sederhana berbasis web
+
+---
+
+# 👩‍💻 Author
 
 Tiffani Eoudia
 
