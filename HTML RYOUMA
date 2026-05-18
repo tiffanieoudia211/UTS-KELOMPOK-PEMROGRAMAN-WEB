@@ -1,0 +1,98 @@
+ <!-- ================= HTML : RYOMA ================= -->
+<body>
+
+<div class="container">
+
+    <h2>Form Data Mahasiswa</h2>
+
+    <form id="formMahasiswa">
+
+        <div class="row">
+            <input type="text" id="nim" placeholder="NIM" required>
+
+            <input type="text" id="nama" placeholder="Nama" required>
+        </div>
+
+        <textarea id="alamat" placeholder="Alamat"></textarea>
+
+        <div class="radio">
+
+            <label>Jenis Kelamin:</label>
+
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="jk" value="Pria">
+                    Pria
+                </label>
+
+                <label>
+                    <input type="radio" name="jk" value="Wanita">
+                    Wanita
+                </label>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <label>Tanggal Lahir:</label>
+
+            <select id="tanggal">
+                <option value="">Tanggal</option>
+            </select>
+
+            <select id="bulan">
+                <option value="">Bulan</option>
+            </select>
+
+            <select id="tahun">
+                <option value="">Tahun</option>
+            </select>
+
+        </div>
+
+        <input type="password" id="password" placeholder="Password">
+
+        <button type="submit" class="submit" id="btnSubmit">
+            Submit
+        </button>
+
+        <button type="reset" class="reset">
+            Reset
+        </button>
+
+        <button type="button" class="excel" onclick="exportExcel()">
+            Export Excel
+        </button>
+
+        <button type="button" class="pdf" onclick="exportPDF()">
+            Export PDF
+        </button>
+
+        <button type="button" class="mode" onclick="toggleMode(this)">
+            Dark Mode
+        </button>
+
+    </form>
+
+    <h2>Data Mahasiswa</h2>
+
+    <table id="tableMahasiswa">
+
+        <thead>
+            <tr>
+                <th>NIM</th>
+                <th>Nama</th>
+                <th>Alamat</th>
+                <th>JK</th>
+                <th>TL</th>
+                <th>Password</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+
+        <tbody id="tableBody"></tbody>
+
+    </table>
+
+</div>
