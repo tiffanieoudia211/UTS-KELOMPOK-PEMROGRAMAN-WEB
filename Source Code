@@ -4,7 +4,7 @@
 <head>
     <title>Form Mahasiswa</title>
 
-         <!-- ================= CSS Delviyany ================= -->
+    <!-- ================= CSS Delviyany ================= -->
     <style>
         body{
             font-family:Arial;
@@ -76,7 +76,7 @@
         .pdf{background:#c62828;color:white;}
         .mode{background:#333;color:white;}
 
-        /* ================= CSS Syalosa (IKON AKSI)  ================= */
+        /* ================= CSS Syalosa (IKON AKSI) ================= */
         .action-img{
             width:20px;
             cursor:pointer;
@@ -107,6 +107,17 @@
             text-align:center;
         }
 
+        /* ================= PAGINATION ================= */
+        .pagination{
+            margin-top:15px;
+            text-align:center;
+        }
+
+        .pagination button{
+            background:#333;
+            color:white;
+        }
+
         /* ================= DARK MODE ================= */
         .dark-mode{
             background:#1e1e1e;
@@ -130,15 +141,16 @@
             background:#111;
         }
     </style>
-<!-- ================= LIBRARY JAVASCRIPT : TIFFANI ================= -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+    <!-- ================= LIBRARY JAVASCRIPT : TIFFANI ================= -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
 </head>
 
-            <!-- ================= HTML : RYOMA ================= -->
+<!-- ================= HTML : TIFFANI ================= -->
 <body>
 
 <div class="container">
@@ -235,6 +247,23 @@
 
     </table>
 
+    <!-- ================= PAGINATION ================= -->
+    <div class="pagination">
+
+        <button type="button" onclick="prevPage()">
+            Previous
+        </button>
+
+        <span id="pageInfo">
+            Halaman 1
+        </span>
+
+        <button type="button" onclick="nextPage()">
+            Next
+        </button>
+
+    </div>
+
 </div>
 
 <!-- ================= JAVASCRIPT Tiffani ================= -->
@@ -255,6 +284,10 @@ const tahun = document.getElementById("tahun");
 
 let editRow = null;
 let dark = false;
+
+/* ================= PAGINATION ================= */
+let currentPage = 1;
+const rowsPerPage = 5;
 
 /* ================= DROPDOWN TANGGAL ================= */
 for(let i=1;i<=31;i++){
@@ -360,6 +393,8 @@ form.addEventListener("submit",function(e){
     }
 
     form.reset();
+
+    applyPagination();
 });
 
 /* ================= HAPUS DATA ================= */
@@ -368,6 +403,8 @@ function hapusData(btn){
     if(confirm("Yakin ingin menghapus data?")){
 
         btn.parentElement.parentElement.remove();
+
+        applyPagination();
     }
 }
 
@@ -433,6 +470,62 @@ function toggleMode(btn){
 
     btn.innerText = dark ? "Light Mode" : "Dark Mode";
 }
+
+/* ================= FUNCTION PAGINATION ================= */
+function applyPagination(){
+
+    const rows = Array.from(tableBody.rows);
+
+    rows.forEach(row => row.style.display = "none");
+
+    const totalPages =
+        Math.ceil(rows.length / rowsPerPage) || 1;
+
+    if(currentPage > totalPages){
+
+        currentPage = totalPages;
+    }
+
+    const start = (currentPage - 1) * rowsPerPage;
+
+    const end = start + rowsPerPage;
+
+    rows.slice(start,end).forEach(row => {
+
+        row.style.display = "";
+    });
+
+    document.getElementById("pageInfo").innerText =
+        `Halaman ${currentPage} dari ${totalPages}`;
+}
+
+/* ================= NEXT PAGE ================= */
+function nextPage(){
+
+    const totalPages =
+        Math.ceil(tableBody.rows.length / rowsPerPage);
+
+    if(currentPage < totalPages){
+
+        currentPage++;
+
+        applyPagination();
+    }
+}
+
+/* ================= PREVIOUS PAGE ================= */
+function prevPage(){
+
+    if(currentPage > 1){
+
+        currentPage--;
+
+        applyPagination();
+    }
+}
+
+/* ================= LOAD AWAL ================= */
+applyPagination();
 
 </script>
 
